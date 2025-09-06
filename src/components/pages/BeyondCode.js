@@ -1,4 +1,5 @@
 import React from 'react';
+import TrademarkFooter from '../common/Footer';
 
 const BeyondCodePage = () => {
   const styles = {
@@ -111,6 +112,7 @@ const BeyondCodePage = () => {
           • New Person, Same Old Mistakes // Tame Impala<br />
         </p>
       </div>
+    <TrademarkFooter/>
     </div>
   );
 };

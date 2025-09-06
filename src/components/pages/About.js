@@ -1,4 +1,5 @@
 import React from 'react';
+import TrademarkFooter from '../common/Footer';
 
 const AboutPage = () => {
   const styles = {
@@ -102,6 +103,7 @@ const AboutPage = () => {
           </div>
         </div>
       </div>
+    <TrademarkFooter/>
     </div>
   );
 };

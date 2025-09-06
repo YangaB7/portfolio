@@ -1,4 +1,5 @@
-import Image from '../../media/portfolio.jpg'
+import Image from '../../media/portfolio.jpg';
+import TrademarkFooter from '../common/Footer';
 const HomePage = () => {
   const styles = {
     page: {
@@ -122,6 +123,7 @@ const HomePage = () => {
         Currently building <span style={styles.flourish}>→</span> mobile apps, web applications,
         and everything in between <span style={styles.flourish}>※</span>
       </p>
+    <TrademarkFooter/>
     </div>
   );
 };

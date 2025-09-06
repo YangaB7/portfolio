@@ -1,4 +1,5 @@
 import React from 'react';
+import TrademarkFooter from '../common/Footer';
 
 const ContactPage = () => {
   const styles = {
@@ -77,8 +78,9 @@ const ContactPage = () => {
       <div style={{ ...styles.divider, marginTop: '60px' }}></div>
       
       <p style={{ fontSize: '14px', color: '#8B9382' }}>
-        <span style={styles.flourish}>※</span> Built with care, 2024
+        <span style={styles.flourish}>※</span> Built with care
       </p>
+    <TrademarkFooter/>
     </div>
   );
 };

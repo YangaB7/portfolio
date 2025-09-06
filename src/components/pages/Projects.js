@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ProjectCard from '../common/ProjectCard';
+import TrademarkFooter from '../common/Footer';
 
 const ProjectsPage = () => {
   const styles = {
@@ -58,6 +59,7 @@ const ProjectsPage = () => {
         description="Developing a mobile app to encourage users to take walks, find walking routes based on desired distance, duration, and scenery type, promoting mental health in the process."
         link="#"
       />
+    <TrademarkFooter/>
     </div>
   );
 };

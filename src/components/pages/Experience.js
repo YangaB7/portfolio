@@ -1,4 +1,5 @@
 import React from 'react';
+import TrademarkFooter from '../common/Footer';
 
 const ExperiencePage = () => {
   const styles = {
@@ -83,6 +84,7 @@ const ExperiencePage = () => {
           blah blah blah
         </p>
       </div> */}
+    <TrademarkFooter/>
     </div>
   );
 };

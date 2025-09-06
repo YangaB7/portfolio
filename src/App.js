@@ -5,6 +5,7 @@ import ProjectsPage from './components/pages/Projects';
 import ContactPage from './components/pages/Contact';
 import ExperiencePage from './components/pages/Experience';
 import BeyondCodePage from './components/pages/BeyondCode'; 
+import TrademarkFooter from '../src/components/common/Footer';
 
 const App = () => {
   const [activePage, setActivePage] = useState('home');
