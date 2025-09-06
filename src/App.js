@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import HomePage from './components/pages/Home';  
 import AboutPage from './components/pages/About';     
 import ProjectsPage from './components/pages/Projects';
@@ -10,6 +10,48 @@ import TrademarkFooter from '../src/components/common/Footer';
 const App = () => {
   const [activePage, setActivePage] = useState('home');
   const [navHovered, setNavHovered] = useState(false);
+  const [navClicked, setNavClicked] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.innerWidth <= 768 || ('ontouchstart' in window);
+      setIsMobile(mobile);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    const handleClickOutside = (e) => {
+      if (isMobile && navClicked) {
+        const navElement = document.getElementById('nav-container');
+        if (navElement && !navElement.contains(e.target)) {
+          setNavClicked(false);
+        }
+      }
+    };
+    
+    document.addEventListener('click', handleClickOutside);
+    
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isMobile, navClicked]);
+
+  const handleNavClick = (e) => {
+    if (isMobile) {
+      e.stopPropagation();
+      setNavClicked(!navClicked);
+    }
+  };
+
+  const handlePageChange = (pageId) => {
+    setActivePage(pageId);
+    if (isMobile) {
+      setNavClicked(false);
+    }
+  };
 
   const styles = {
     app: {
@@ -30,8 +72,8 @@ const App = () => {
       height: '60px'
     },
     navCircle: {
-      width: navHovered ? '360px' : '120px',
-      height: navHovered ? '360px' : '120px',
+      width: (navHovered || navClicked) ? '360px' : '120px',
+      height: (navHovered || navClicked) ? '360px' : '120px',
       background: '#8B9382',
       borderRadius: '0 0 100% 0',
       position: 'absolute',
@@ -51,14 +93,14 @@ const App = () => {
       fontSize: '24px',
       fontWeight: '300',
       transition: 'opacity 0.3s ease',
-      opacity: navHovered ? 0 : 1
+      opacity: (navHovered || navClicked) ? 0 : 1
     },
     navMenu: {
       position: 'absolute',
       top: '0',
       left: '0',
-      opacity: navHovered ? 1 : 0,
-      pointerEvents: navHovered ? 'all' : 'none',
+      opacity: (navHovered || navClicked) ? 1 : 0,
+      pointerEvents: (navHovered || navClicked) ? 'all' : 'none',
       transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
     },
     navItem: {
@@ -99,18 +141,17 @@ const App = () => {
         style={{
           ...styles.navItem,
           ...positions[index],
-          ...(hovered ? styles.navItemHover : {}),
+          ...(hovered && !isMobile ? styles.navItemHover : {}),
           ...(activePage === pageId ? styles.navItemActive : {})
         }}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        onClick={() => setActivePage(pageId)}
+        onMouseEnter={() => !isMobile && setHovered(true)}
+        onMouseLeave={() => !isMobile && setHovered(false)}
+        onClick={() => handlePageChange(pageId)}
       >
         {children}
       </button>
     );
   };
-
 
   const renderPage = () => {
     switch(activePage) {
@@ -156,9 +197,11 @@ const App = () => {
       
       {/* Navigation */}
       <div 
+        id="nav-container"
         style={styles.navContainer}
-        onMouseEnter={() => setNavHovered(true)}
-        onMouseLeave={() => setNavHovered(false)}
+        onMouseEnter={() => !isMobile && setNavHovered(true)}
+        onMouseLeave={() => !isMobile && setNavHovered(false)}
+        onClick={handleNavClick}
       >
         <div style={styles.navCircle}>
           <div style={styles.navIcon}>☰</div>
