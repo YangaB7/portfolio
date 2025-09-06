@@ -80,10 +80,7 @@ const ExperiencePage = () => {
           Startup Name <span style={styles.flourish}>•</span> Part-time
         </p>
         <p>
-          Built responsive web applications using <em>React and Node.js</em>.
-          Designed RESTful APIs and implemented database schemas. Reduced
-          application load time by 40% through code optimization and caching
-          strategies.
+          blah blah blah
         </p>
       </div> */}
     </div>

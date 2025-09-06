@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import ProjectCard from '../common/ProjectCard';
 
-// ProjectCard component - could be moved to its own file later
-
 const ProjectsPage = () => {
   const styles = {
     page: {
