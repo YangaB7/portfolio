@@ -71,7 +71,7 @@ const BeyondCodePage = () => {
           <p><em>Cooking</em> — Fun & experimental destresser and always a rewarding experience</p>
           <p><em>Reading</em> — Philosphy, horror, sci-fi</p>
           <p><em>Investing</em> — Recently started, don't know what I'm doing just yet</p>
-          <p><em>Soccer</em> — Pickup warrior looking to get a glimpse of glory days</p>
+          <p><em>Soccer</em> — Pickup warrior, still chasing glimpses of the glory days</p>
         </div>
       </div>
 
