@@ -96,7 +96,7 @@ const BeyondCodePage = () => {
           <p><strong>Creators:</strong> Mumbo Jumbo, Kurzgesagt, Tommy G</p>
           <p><strong>Books:</strong> "Why Fish Don't Exist", "Blood Meridian", "The Long Walk"</p>
           <p><strong>Movies:</strong> Nope, Parasite, The Dark Knight</p>
-          <p><strong>Video Games:</strong>Elden Ring, TFT, Sekiro, Bloodborne</p>
+          <p><strong>Video Games:</strong> Elden Ring, TFT, Sekiro, Bloodborne</p>
         </div>
       </div>
 
