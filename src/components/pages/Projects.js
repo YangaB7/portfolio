@@ -43,21 +43,21 @@ const ProjectsPage = () => {
         title="KYMY"
         tech="React Native • Tailwind • Expo"
         description="A mobile app designed to aid senior citizens in strengthening their cognitive abilities through engaging brain exercises. Features a user-friendly interface with customizable difficulty levels and gamified progress tracking. Won 3rd place in Congressional App Challenge 2024."
-        link="#"
+        link="https://github.com/YangaB7/KYMY"
       />
       
       <ProjectCard
         title="YExchange (In Development)"
         tech="React • Supabase • JavaScript"
         description="Building a web application to facilitate the exchange of skills and languages among Yale students, promoting expansion of knowledge and community engagement on campus."
-        link="#"
+        link="https://github.com/YangaB7/YExchange"
       />
       
       <ProjectCard
         title="Wander (In Development)"
         tech="React Native • Tailwind • Expo"
         description="Developing a mobile app to encourage users to take walks, find walking routes based on desired distance, duration, and scenery type, promoting mental health in the process."
-        link="#"
+        link="https://github.com/YangaB7/Wander"
       />
     <TrademarkFooter/>
     </div>
